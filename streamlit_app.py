@@ -20,4 +20,4 @@ if prompt is not None:
                                         tmperature = 0.7,max_tokens = 1000)
     answer = response['choices'][0].message.content
     st.session_state['messages'].append({'role':'assistant','content':answer})
-    st.chat_message('system').write(answer)
+    st.chat_message('assistant').write(answer)
