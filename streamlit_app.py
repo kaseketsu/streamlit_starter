@@ -17,7 +17,7 @@ if prompt is not None:
     st.session_state['messages'].append({'role':'user','content':prompt})
     st.chat_message('user').write(prompt)
     response = openai.ChatCompletion.create(model = 'gpt-3.5-turbo',messages = st.session_state['messages'],
-                                        tmperature = 0.7,max_tokens = 1000)
+                                        temperature = 0.7,max_tokens = 1000)
     answer = response['choices'][0].message.content
     st.session_state['messages'].append({'role':'assistant','content':answer})
     st.chat_message('assistant').write(answer)
